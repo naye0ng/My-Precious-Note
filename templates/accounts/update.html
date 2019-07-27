@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-{% load static %}
+{% load bootstrap4 %}
 
 {% block body %}
-생성
+<form method='POST'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type='submit'>Update</button>
+</form>
 {% endblock body %}
