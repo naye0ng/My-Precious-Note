@@ -9,6 +9,7 @@ public/private 옵션과 '좋아요' 기능을 제공하는 메모 앱.
 - 로그인/회원가입
 - 메모 읽기/수정/삭제
 - 메모 생성시 지정한 옵션에 따라 다른 사람에게 공개/비공개 가능
+
 	| Memo Option | Read | Write |
 	| :----: | :----: | :-----: |
 	| public | owner, guest | owner |
@@ -60,10 +61,11 @@ public/private 옵션과 '좋아요' 기능을 제공하는 메모 앱.
   | like_users | Number,FK | User Table과 M:N 관계 |
 
 
-- ####User Table
+- #### User Table
 
   
   - Django에서 제공하는 User 모델과 1:1로 매핑하여 사용한다.
+  
   
   | Field | Type | Description |
   | :----: | :----: | :----- |
