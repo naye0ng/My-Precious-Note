@@ -55,6 +55,7 @@ public/private 옵션과 '좋아요' 기능을 제공하는 메모 앱.
   | id | Number, PK | 메모 식별키 |
   | title | Text | 메모 제목 |
   | content | Text | 메모 내용 |
+  | isPublic | Boolean(default=False) |  public/private 설정 |
   | created_at | DateTime | 메모 생성 날짜 및 시간 |
   | updated_at | DateTime | 업데이트 날짜 및 시간 |
   | user | Number,FK | User Table과 1:N 관계 |
@@ -65,12 +66,12 @@ public/private 옵션과 '좋아요' 기능을 제공하는 메모 앱.
 
   
   - Django에서 제공하는 User 모델과 1:1로 매핑하여 사용한다.
-  
+  <br/>
   
   | Field | Type | Description |
   | :----: | :----: | :----- |
   | id | Number, PK | 사용자 식별키 |
-  | user | Number,FK | Django User Model 과 1:1 관계 <br />(https://docs.djangoproject.com/en/2.2/ref/contrib/auth/) |
+  | user | Number, FK | Django User Model 과 1:1 관계 <br />(https://docs.djangoproject.com/en/2.2/ref/contrib/auth/) |
   | nickname | Text | 닉네임 |
 
 
@@ -82,10 +83,8 @@ public/private 옵션과 '좋아요' 기능을 제공하는 메모 앱.
 	| Method | URL | Rule |
 	| :----: | :---- | :----- |
 	| GET | /notes/ | `public`  메모 목록 조회 |
-	| GET | /notes/1 | `public`  메모 상세 보기 |
 	| GET | /notes/1/like | 좋아요 기능 |
-	| POST | /notes/ | `private `  메모 목록 조회 |
-	| POST | /notes/1 | `private`  메모 상세 보기 |
+	| POST | /notes/ | `private`  메모 목록 조회 |
 	| GET | /notes/create | 새 메모 작성 폼 |
 	| POST | /notes/creare | 새 메모 생성 |
 	| GET | /notes/1/update | 메모 수정 폼 |
@@ -102,4 +101,6 @@ public/private 옵션과 '좋아요' 기능을 제공하는 메모 앱.
 	|  POST  | /accounts/logout | 로그아웃                   |
 	|  GET   | /accounts/signup | 회원 가입 폼               |
 	|  POST  | /accounts/signup | 회원 가입                  |
+    |  GET   | /accounts/update | 회원 정보 변경 폼               |
+	|  POST  | /accounts/update | 회원 정보 변경                  |
 	|  GET   | /accounts/1      | 개인 페이지                |
